@@ -5,8 +5,8 @@ RSpec.describe HTTPcap do
     expect(HTTPcap::VERSION).not_to be nil
   end
 
-  describe 'self.http_connections' do
-    subject { HTTPcap.http_connections(file_path) }
+  describe 'self.http_flows' do
+    subject { HTTPcap.http_flows(file_path) }
     let(:file_path) { fixture_path('test.pcap') }
 
     it 'returns HTTPFlow' do

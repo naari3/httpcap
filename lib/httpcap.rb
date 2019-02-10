@@ -11,10 +11,10 @@ require 'httpcap/response'
 module HTTPcap
   class Error < StandardError; end
 
-  # get HTTP connections from pcap file
+  # get HTTP request and response from pcap file
   # @param [String] filepath pcapfile path
   # @return [Array<HTTPcap::HTTPConnection>] http connections
-  def self.http_connections(filepath)
+  def self.http_flows(filepath)
     Enumerator.new do |y|
       ReassembleTcp.tcp_connections(filepath).map do |stream|
         stream.tcpdata.each_slice(2) do |tcp_send, tcp_recv|
