@@ -9,8 +9,8 @@ RSpec.describe HTTPcap do
     subject { HTTPcap.http_connections(file_path) }
     let(:file_path) { fixture_path('test.pcap') }
 
-    it 'returns http hashes' do
-      expect(subject).to all(satisfy { |http| http.is_a? Hash })
+    it 'returns HTTPFlow' do
+      expect(subject).to all(satisfy { |http| http.is_a? HTTPcap::HTTPFlow })
     end
   end
 end

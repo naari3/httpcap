@@ -3,6 +3,7 @@
 require 'reassemble_tcp'
 
 require 'httpcap/version'
+require 'httpcap/http_flow'
 
 # HTTPcap - parse pcap, then return http request and response
 module HTTPcap
@@ -18,10 +19,7 @@ module HTTPcap
           next unless tcp_send[1] == :send
           next unless tcp_recv[1] == :recv
 
-          y << {
-            request: tcp_send[2],
-            response: tcp_recv[2]
-          }
+          y << HTTPFlow.new(tcp_send[2], tcp_recv[2])
         end
       end
     end
