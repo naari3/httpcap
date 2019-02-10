@@ -2,7 +2,7 @@
 
 require 'httpcap/version'
 
-module Httpcap
+module HTTPcap
   class Error < StandardError; end
   # Your code goes here...
 end

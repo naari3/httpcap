@@ -6,7 +6,7 @@ require 'httpcap/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'httpcap'
-  spec.version       = Httpcap::VERSION
+  spec.version       = HTTPcap::VERSION
   spec.authors       = ['naari3']
   spec.email         = ['naari.named@gmail.com']
 

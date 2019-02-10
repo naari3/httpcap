@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Httpcap do
+RSpec.describe HTTPcap do
   it 'has a version number' do
-    expect(Httpcap::VERSION).not_to be nil
+    expect(HTTPcap::VERSION).not_to be nil
   end
 
   it 'does something useful' do
