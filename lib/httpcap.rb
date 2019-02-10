@@ -18,10 +18,12 @@ module HTTPcap
     Enumerator.new do |y|
       ReassembleTcp.tcp_connections(filepath).map do |stream|
         stream.tcpdata.each_slice(2) do |tcp_send, tcp_recv|
-          next unless tcp_send[1] == :send
-          next unless tcp_recv[1] == :recv
+          next unless tcp_send[1] == :send && tcp_recv[1] == :recv
 
-          y << HTTPFlow.new(tcp_send[2], tcp_recv[2])
+          request = Request.new(tcp_send[2])
+          response = Response.new(tcp_recv[2])
+
+          y << HTTPFlow.new(request, response)
         end
       end
     end
