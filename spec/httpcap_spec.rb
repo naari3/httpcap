@@ -5,7 +5,12 @@ RSpec.describe HTTPcap do
     expect(HTTPcap::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe 'self.http_connections' do
+    subject { HTTPcap.http_connections(file_path) }
+    let(:file_path) { fixture_path('test.pcap') }
+
+    it 'returns http hashes' do
+      expect(subject).to all(satisfy { |http| http.is_a? Hash })
+    end
   end
 end

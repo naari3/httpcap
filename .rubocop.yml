@@ -8,3 +8,6 @@ Metrics/BlockLength:
 
 Metrics/LineLength:
   Max: 180
+
+Metrics/MethodLength:
+  Max: 20
