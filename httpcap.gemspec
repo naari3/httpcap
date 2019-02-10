@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'httpcap/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'httpcap'
+  spec.name          = 'httpcap-rb'
   spec.version       = HTTPcap::VERSION
   spec.authors       = ['naari3']
   spec.email         = ['naari.named@gmail.com']

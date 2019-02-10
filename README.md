@@ -7,7 +7,7 @@ parse pcap, then return http request and response
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'httpcap'
+gem 'httpcap-rb'
 ```
 
 And then execute:
@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+require 'httpcap'
 HTTPcap.http_flows('./http.pcap') do |flow|
   p flow.request.body
   # => "{\"userId\":12345}"

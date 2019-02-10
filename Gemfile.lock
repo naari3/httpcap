@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    httpcap (0.1.0)
+    httpcap-rb (0.1.0)
       http-parser-lite
       reassemble_tcp
 
@@ -61,7 +61,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  httpcap!
+  httpcap-rb!
   pry
   pry-byebug
   rake (~> 10.0)
