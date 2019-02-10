@@ -7,11 +7,11 @@ module HTTPcap
   class Request < Message
     attr_reader :http_method
 
-    def initialize
+    def initialize(data)
       @http_method = ''
       @relative_url = ''
 
-      super(HTTP::Parser::TYPE_REQUEST)
+      super(HTTP::Parser::TYPE_REQUEST, data)
     end
 
     def url

@@ -7,8 +7,10 @@ module HTTPcap
   class Response < Message
     attr_reader :http_status
 
-    def initialize
-      super(HTTP::Parser::TYPE_RESPONSE)
+    def initialize(data)
+      @http_status = ''
+
+      super(HTTP::Parser::TYPE_RESPONSE, data)
     end
 
     def on_message_complete

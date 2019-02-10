@@ -10,7 +10,7 @@ module HTTPcap
     attr_reader :body, :headers
 
     # @param [Integer] type request or response
-    def initialize(type)
+    def initialize(type, data)
       @parser = HTTP::Parser.new(type)
       @headers = Headers.new
       @body = ''
@@ -18,6 +18,7 @@ module HTTPcap
       %i[on_message_complete on_url on_header_field on_header_value on_headers_complete on_body].each do |name|
         @parser.send(name, &method(name))
       end
+      receive_data(data)
     end
 
     def receive_data(data)

@@ -5,8 +5,8 @@ module HTTPcap
   class HTTPFlow
     attr_reader :request, :response
 
-    # @param [String] request
-    # @param [String] response
+    # @param [HTTPcap::Request] request
+    # @param [HTTPcap::Response] response
     def initialize(request, response)
       @request = request
       @response = response
