@@ -4,7 +4,7 @@ require 'reassemble_tcp'
 
 require 'httpcap/version'
 require 'httpcap/http_flow'
-require 'httpcap/headers'
+require 'httpcap/message'
 
 # HTTPcap - parse pcap, then return http request and response
 module HTTPcap
