@@ -12,7 +12,6 @@ module HTTPcap
     # @param [Integer] type request or response
     def initialize(type)
       @parser = HTTP::Parser.new(type)
-      @relative_url = ''
       @headers = Headers.new
       @body = ''
 
@@ -21,19 +20,13 @@ module HTTPcap
       end
     end
 
-    def url
-      @headers.fetch('Host', '') + @relative_url
-    end
-
     def receive_data(data)
       @parser << data
     end
 
     def on_message_complete; end
 
-    def on_url(url)
-      @relative_url = url
-    end
+    def on_url; end
 
     def on_header_field(value)
       @headers.stream(Headers::TYPE_FIELD, value)
