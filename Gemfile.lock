@@ -28,7 +28,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.10)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (13.0.0)
     reassemble_tcp (0.0.2)
       packetfu (~> 1.1.9)
     rspec (3.8.0)
@@ -62,7 +62,7 @@ DEPENDENCIES
   httpcap-rb!
   pry
   pry-byebug
-  rake (~> 12.3)
+  rake (~> 13.0)
   rspec (~> 3.0)
   rubocop
 
